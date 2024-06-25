@@ -1,0 +1,106 @@
+### Test HDFS Reader Service
+GET http://localhost:8080/files/read?path=/user/hadoop/inputs/alice.txt
+Accept: application/json
+
+### Test HDFS Write Service
+POST http://localhost:8080/files/write?path=/user/hadoop/inputs/newfile.txt&content=Hello, HDFS!
+Content-Type: application/x-www-form-urlencode
+
+### Test HDFS Delete Service
+DELETE http://localhost:8080/files/delete?path=/user/hadoop/inputs/alice.txt
+
+### Test HDFS File Exists
+GET http://localhost:8080/files/exists?path=/user/hadoop/inputs/alice.txt
+
+### Test HDFS List Files
+GET http://localhost:8080/files/list?directoryPath=/user/hadoop/inputs
+Accept: application/json
+
+
+
+### Test HDFS Reader Service
+GET http://localhost:8080/files/read?path=/user/hadoop/inputs/newfile.txt
+Accept: application/json
+
+### Test HDFS Reader Service
+GET http://localhost:8080/files/read?path=/user/hadoop/inputs/d5405a50-94a6-41fa-9b20-6ba3214eea9d_alice_in_wonderland.txt
+Accept: application/json
+
+
+### Test Wordcount Spark Job Submission
+POST http://localhost:8080/spark/submit/wordcount
+Content-Type: application/json
+
+{
+  "inputFileName": ["alice.txt", "buggy.txt", "game.txt"]
+}
+
+### Test KMeans Spark Job Submission
+POST http://localhost:8080/spark/submit/kmeans
+Content-Type: application/json
+
+{
+  "inputFileName": ["alice.txt"]
+}
+
+### Test TF-IDF Spark Job Submission
+POST http://localhost:8080/spark/submit/tfidf
+Content-Type: application/json
+
+{
+  "inputFileName": ["alice.txt"]
+}
+
+### Find all files
+GET http://localhost:8080/api/file
+Accept: application/json
+
+### Get a file by ID
+GET http://localhost:8080/api/file/{id}
+Accept: application/json
+
+### Create a new file metadata entry
+POST http://localhost:8080/api/file
+Content-Type: application/json
+
+{
+    "title": "Sample Article",
+    "fileName": "sample_article.txt",
+    "filePath": "/user/hadoop/inputs/sample_article.txt",
+    "fileSize": 12345,
+    "authors": ["Author One", "Author Two"]
+}
+
+### Update a file metadata entry
+PUT http://localhost:8080/api/file/
+Content-Type: application/json
+
+{
+    "title": "Updated Sample Article",
+    "fileName": "updated_sample_article.txt",
+    "filePath": "/user/hadoop/inputs/updated_sample_article.txt",
+    "fileSize": 67890,
+    "authors": ["Author One", "Author Three"]
+}
+
+### Delete a file metadata entry
+DELETE http://localhost:8080/api/file/
+
+
+### Test Data Transfer Service
+POST http://localhost:8080/data/transfer
+Content-Type: application/json
+
+[
+  "6655671fbb282653890e367f",
+  "665c506e9544eb5462c6ebff",
+  "665f43af449228603da9c171"
+]
+
+### Test Data Transfer Service - Read Parquet File
+GET http://localhost:8080/data/parquet
+Accept: application/json
+
+### Test view by directory
+GET http://localhost:8080/api/file/by-directory?directoryPath=/user/hadoop/inputs/
+Accept: application/json
