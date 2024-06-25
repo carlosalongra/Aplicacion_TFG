@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">UNiK</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/upload-files">Upload Your Files</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-files">View Files</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/select-analysis">View Analysis</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer bg-dark text-white p-4 text-center">
+  <p>© 2024 UNiK. All rights reserved.</p>
+</footer>
+

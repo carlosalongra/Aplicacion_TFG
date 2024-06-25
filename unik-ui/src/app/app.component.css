@@ -1,0 +1,35 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.navbar {
+  height: 60px; /* Adjust the height as needed */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+}
+
+.vh-100 {
+  height: calc(100vh - 60px - 60px); /* Adjust height to account for header and footer */
+}
+

@@ -1,0 +1,31 @@
+<div class="mt-5">
+  <h2 class="mb-4">Upload Files</h2>
+  <div class="mb-3">
+    <input type="file" (change)="onFileSelected($event)" class="form-control">
+    <button (click)="uploadFile()" class="btn btn-primary mt-2">Upload</button>
+  </div>
+
+  <h3 class="mt-4">All Files in Metadata</h3>
+  <ul class="list-group mb-4">
+    <li *ngFor="let file of metadataFiles" (click)="selectFile(file)" [class.selected]="isSelected(file)" class="list-group-item list-group-item-action">
+      {{ file.title }}
+    </li>
+  </ul>
+
+  <button (click)="uploadSelectedFilesToHDFS()" class="btn btn-success mb-4">Upload Selected Files to HDFS</button>
+
+  <h3>Selected Files</h3>
+  <ul class="list-group mb-4">
+    <li *ngFor="let file of selectedFiles" class="list-group-item">
+      {{ file.title }}
+    </li>
+  </ul>
+
+  <div class="d-flex justify-content-between">
+    <button (click)="navigateTo('view-files')" class="btn btn-outline-primary">View HDFS Files</button>
+    <button (click)="navigateTo('select-analysis')" class="btn btn-outline-success">Analyze Files</button>
+  </div>
+
+  <button (click)="navigateTo('')" class="btn btn-secondary mt-3">Back to Home</button>
+</div>
+

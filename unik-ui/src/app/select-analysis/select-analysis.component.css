@@ -1,0 +1,24 @@
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.list-group-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.list-group-item p {
+  margin: 0;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+}
+

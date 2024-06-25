@@ -1,0 +1,13 @@
+<div class="mt-5">
+  <h2 class="mb-4">Analysis Results</h2>
+  <ul class="list-group mb-4">
+    <li *ngFor="let result of results" class="list-group-item">
+      {{ result }}
+    </li>
+  </ul>
+  <div class="d-flex justify-content-between">
+    <button (click)="navigateTo('')" class="btn btn-outline-primary">Go Home</button>
+    <button (click)="downloadResults()" class="btn btn-outline-success">Download</button>
+  </div>
+</div>
+

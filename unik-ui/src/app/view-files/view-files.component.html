@@ -1,0 +1,24 @@
+<div class="mt-5">
+  <h2 class="mb-4">All Files in HDFS</h2>
+  <ul class="list-group mb-4">
+    <li *ngFor="let file of files" (click)="showFileInfo(file)" class="list-group-item list-group-item-action">
+      {{ file.title }}
+    </li>
+  </ul>
+
+  <div *ngIf="selectedFile" class="card mb-4">
+    <div class="card-body">
+      <h3 class="card-title">File Info</h3>
+      <p class="card-text"><strong>Title:</strong> {{ selectedFile.title }}</p>
+      <p class="card-text"><strong>File Name:</strong> {{ selectedFile.fileName }}</p>
+      <p class="card-text"><strong>File Path:</strong> {{ selectedFile.filePath }}</p>
+      <p class="card-text"><strong>Authors:</strong> {{ selectedFile.authors.join(', ') }}</p>
+      <p class="card-text"><strong>File Size:</strong> {{ selectedFile.fileSize }} bytes</p>
+      <button (click)="downloadFile(selectedFile.filePath)" class="btn btn-outline-success">Download</button>
+    </div>
+  </div>
+
+  <button (click)="navigateToUpload()" class="btn btn-primary mb-3">Upload Your Files</button>
+  <button (click)="navigateToHome()" class="btn btn-secondary">Back to Home</button>
+</div>
+

@@ -1,0 +1,14 @@
+h2, h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.selected {
+  font-weight: bold;
+  color: green;
+  background-color: #e0ffe0;
+}
+.list-group-item-action:hover {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
